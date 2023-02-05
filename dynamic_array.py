@@ -149,10 +149,26 @@ class DynamicArray:
         self._size = self._size +1
 
     def insert_at_index(self, index: int, value: object) -> None:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        if index < 0 or index >= self._size:
+            raise DynamicArrayException
+        if self._size == self._capacity:
+            self.resize(self._size * 2)
+        new_arr = StaticArray(self._capacity)
+        for i in range(self._size):
+            print(i)
+            if i >= index:
+                new_arr[i+1] = self._data[i]
+            else:
+                new_arr[i] = self._data[i]
+
+        self._data = new_arr
+        self._data[index] = value
+        self._size = self._size +1
+
+
+
+
+
 
     def remove_at_index(self, index: int) -> None:
         """
