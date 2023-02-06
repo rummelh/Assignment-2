@@ -132,6 +132,7 @@ class DynamicArray:
     # -----------------------------------------------------------------------
 
     def resize(self, new_capacity: int) -> None:
+        """resizes an array if it reaches capacity"""
         if new_capacity <= 0 or new_capacity < self._size:
             return
         new_arr = StaticArray(new_capacity)
@@ -141,15 +142,15 @@ class DynamicArray:
         self._data = new_arr
 
 
-
     def append(self, value: object) -> None:
+        """adds a value on the end of a dynamic array"""
         if self._size == self._capacity:
             self.resize(self._size * 2)
         self._data[self._size] = value
         self._size = self._size +1
 
     def insert_at_index(self, index: int, value: object) -> None:
-
+        """Takes an index and value as parameters and inserts them into the dynamic array"""
         if self._size == self._capacity:
             self.resize(self._size * 2)
         if index < 0 or index > self._size:
@@ -164,7 +165,6 @@ class DynamicArray:
         self._data = new_arr
         self._data[index] = value
         self._size = self._size +1
-
 
 
     def remove_at_index(self, index: int) -> None:
