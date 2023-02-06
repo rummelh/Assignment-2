@@ -172,10 +172,11 @@ class DynamicArray:
         if index < 0 or index > self._size-1:
             raise DynamicArrayException
         if self._size < self._capacity / 4:
+            if self._capacity > 10 and self._capacity < 20 :
+                self.resize(10)
             if self._capacity / 2 >= 10:
                 self.resize(self._size*2)
-            if self._capacity > 10 and self._capacity <20 :
-                self.resize(10)
+
             else:
                 None
         new_arr = StaticArray(self._capacity)
