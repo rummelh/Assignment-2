@@ -87,7 +87,7 @@ class Bag:
             count_2 = second_bag.count(self._da.get_at_index(i))
             if count_1!= count_2:
                 return False
-            else: return True
+        else: return True
 
 
     def __iter__(self):
@@ -153,6 +153,11 @@ if __name__ == "__main__":
     bag1 = Bag([100, 200, 300, 200])
     bag2 = Bag([100, 200, 30, 100])
     print(bag1.equal(bag2))
+
+    print("\n# equal example 2")
+    bag_6 = Bag([-73217, -52647, 65851, -94601, -98110, -88797, -13591, -14129, 50035, -50480, -76840])
+    bag_7 = Bag([-94601, 50035, -50480, -13591, -88797, -98110, -33277, -52647, -73217, -14129, 65851])
+    print(bag_6.equal(bag_7))
 
     print("\n# __iter__(), __next__() example 1")
     bag = Bag([5, 4, -8, 7, 10])
