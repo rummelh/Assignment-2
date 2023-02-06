@@ -199,10 +199,9 @@ class DynamicArray:
 
 
     def merge(self, second_da: "DynamicArray") -> None:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """adds a given dynamic array on to the already existing array"""
+        for i in range(second_da.length()):
+            self.append(second_da[i])
 
     def map(self, map_func) -> "DynamicArray":
         """
