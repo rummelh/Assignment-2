@@ -62,10 +62,9 @@ class Bag:
 
 
     def clear(self) -> None:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """removes every element from an array"""
+        empty_da = DynamicArray()
+        self._da = empty_da
 
     def equal(self, second_bag: "Bag") -> bool:
         """
