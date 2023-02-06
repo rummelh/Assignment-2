@@ -219,11 +219,19 @@ class DynamicArray:
         return new_array
 
     def reduce(self, reduce_func, initializer=None) -> object:
+        """applies the reduce func to every element in the array"""
         if self._size == 0:
             return initializer
         temp = self._data[0]
+        if initializer != None:
+            temp = initializer
+            self._size += 1
         for i in range(self._size-1):
             nex_val = self._data[i + 1]
+            if initializer != None:
+                nex_val = self._data[i]
+                if nex_val == None:
+                    return initializer
             temp = reduce_func(temp, nex_val)
         return temp
 
