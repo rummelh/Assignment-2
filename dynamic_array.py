@@ -240,7 +240,6 @@ class DynamicArray:
 def find_mode(arr: DynamicArray) -> (DynamicArray, int):
     pass
 
-
 # ------------------- BASIC TESTING -----------------------------------------
 
 

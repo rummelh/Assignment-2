@@ -62,7 +62,6 @@ class Bag:
 
 
 
-
     def count(self, value: object) -> int:
         """counts the number of that value in an array"""
         count = 0
@@ -78,10 +77,18 @@ class Bag:
         self._da = empty_da
 
     def equal(self, second_bag: "Bag") -> bool:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """tests to see if two bags are equal"""
+        if self._da.length() != second_bag.size():
+            return False
+        if self._da.length() == 0 and second_bag.size()==0:
+            return True
+        for i in range(self._da.length()):
+            count_1 = self.count(self._da.get_at_index(i))
+            count_2 = second_bag.count(self._da.get_at_index(i))
+            if count_1!= count_2:
+                return False
+            else: return True
+
 
     def __iter__(self):
         self._index = 0
