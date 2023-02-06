@@ -152,7 +152,7 @@ class DynamicArray:
 
         if self._size == self._capacity:
             self.resize(self._size * 2)
-        if index < 0 or index >= self._capacity:
+        if index < 0 or index > self._size:
             raise DynamicArrayException
         new_arr = StaticArray(self._capacity)
         for i in range(self._size):
