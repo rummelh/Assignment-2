@@ -47,9 +47,20 @@ class Bag:
 
 
     def remove(self, value: object) -> bool:
-        #for i in range(self._da.length()):
-           #if self._da.get_at_index(i)== value:
-        pass
+        """returns true if element is removed from array and false otherwise"""
+        new_arr = DynamicArray()
+        count = 0
+        for i in range(self.size()):
+            if self._da.get_at_index(i)==value and count == 0:
+                count+=1
+            else:
+                new_arr.append(self._da.get_at_index(i))
+        self._da = new_arr
+        if count > 0:
+            return True
+        else: return False
+
+
 
 
     def count(self, value: object) -> int:
