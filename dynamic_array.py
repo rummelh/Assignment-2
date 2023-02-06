@@ -204,10 +204,14 @@ class DynamicArray:
             self.append(second_da[i])
 
     def map(self, map_func) -> "DynamicArray":
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """calls the map_func on the value at every index in the given array"""
+        da = DynamicArray()
+        for i in range(self._size):
+            da.append(map_func(self._data[i]))
+        return da
+
+
+
 
     def filter(self, filter_func) -> "DynamicArray":
         """
