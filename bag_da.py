@@ -45,19 +45,21 @@ class Bag:
     def add(self, value: object) -> None:
         self._da.append(value)
 
+
     def remove(self, value: object) -> bool:
-        for i in range(self.size()):
-            if self._da[i] == value:
-                self._da.remove_at_index(i)
-                return True
-            else:
-                return False
+        #for i in range(self._da.length()):
+           #if self._da.get_at_index(i)== value:
+        pass
+
 
     def count(self, value: object) -> int:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """counts the number of that value in an array"""
+        count = 0
+        for i in range(self._da.length()):
+            if self._da.get_at_index(i)==value:
+                count+=1
+        return count
+
 
     def clear(self) -> None:
         """
