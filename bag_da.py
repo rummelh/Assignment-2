@@ -46,10 +46,12 @@ class Bag:
         self._da.append(value)
 
     def remove(self, value: object) -> bool:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        for i in range(self.size()):
+            if self._da[i] == value:
+                self._da.remove_at_index(i)
+                return True
+            else:
+                return False
 
     def count(self, value: object) -> int:
         """
@@ -70,16 +72,17 @@ class Bag:
         pass
 
     def __iter__(self):
-        """
-        TODO: Write this implementation
-        """
-        pass
+        self._index = 0
+
+        return self
 
     def __next__(self):
-        """
-        TODO: Write this implementation
-        """
-        pass
+        try:
+            value = self._da[self._index]
+        except DynamicArrayException:
+            raise StopIteration
+        self._index = self._index + 1
+        return value
 
 
 # ------------------- BASIC TESTING -----------------------------------------
