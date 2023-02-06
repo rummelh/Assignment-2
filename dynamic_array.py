@@ -210,14 +210,13 @@ class DynamicArray:
             da.append(map_func(self._data[i]))
         return da
 
-
-
-
     def filter(self, filter_func) -> "DynamicArray":
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """returns a new array with elements that return true from the filter function"""
+        new_array = DynamicArray()
+        for i in range(self._size):
+            if filter_func(self._data[i]) == True:
+                new_array.append(self._data[i])
+        return new_array
 
     def reduce(self, reduce_func, initializer=None) -> object:
         """
