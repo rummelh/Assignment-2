@@ -238,7 +238,28 @@ class DynamicArray:
 
 
 def find_mode(arr: DynamicArray) -> (DynamicArray, int):
-    pass
+    """returns a dynamic array with most recurring values and their frequency"""
+    temp_arr = DynamicArray()
+    first_num = arr[0]
+    winner_count = 1
+    final_count = 0
+    final_mode = ''
+    for index in range(arr.length()):
+        current_num = arr[index]
+        if current_num == first_num and index > 0:
+            first_num = current_num
+            winner_count += 1
+        if current_num != first_num:
+            winner_count = 1
+        if winner_count >= final_count:
+            if winner_count > final_count:
+                temp_arr = DynamicArray()
+            final_count = winner_count
+            final_mode = current_num
+            temp_arr.append(final_mode)
+        first_num = current_num
+    final_tuple = (temp_arr, final_count)
+    return final_tuple
 
 # ------------------- BASIC TESTING -----------------------------------------
 
