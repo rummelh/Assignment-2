@@ -176,7 +176,6 @@ class DynamicArray:
                 self.resize(10)
             if self._capacity / 2 >= 10:
                 self.resize(self._size*2)
-
             else:
                 None
         new_arr = StaticArray(self._capacity)
@@ -189,10 +188,15 @@ class DynamicArray:
         self._size = self._size - 1
 
     def slice(self, start_index: int, size: int) -> "DynamicArray":
-        """
-        TODO: Write this implementation
-        """
-        pass
+        """returns a new dynamic array with a spliced version of the original array"""
+        new_arr = DynamicArray()
+        if size < 0 or start_index > self._size-1 or start_index < 0 or size > self._size or start_index + size > self._size:
+            raise DynamicArrayException
+        for i in range(self._size):
+            if i >= start_index and new_arr.length()< size:
+                new_arr.append(self._data[i])
+        return new_arr
+
 
     def merge(self, second_da: "DynamicArray") -> None:
         """
