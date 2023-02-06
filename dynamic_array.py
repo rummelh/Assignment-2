@@ -3,7 +3,7 @@
 # Course: CS261 - Data Structures
 # Assignment: 2
 # Due Date: 2/6/2023
-# Description:
+# Description: Dynamic array class that uses static array object as its data storage
 
 
 from static_array import StaticArray

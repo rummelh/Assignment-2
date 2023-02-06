@@ -3,7 +3,7 @@
 # Course: CS261 - Data Structures
 # Assignment: 2
 # Due Date: 2/6/2023
-# Description:
+# Description: uses the dynamic array class as its data storage
 
 
 from dynamic_array import *
