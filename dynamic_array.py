@@ -219,10 +219,13 @@ class DynamicArray:
         return new_array
 
     def reduce(self, reduce_func, initializer=None) -> object:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        if self._size == 0:
+            return initializer
+        temp = self._data[0]
+        for i in range(self._size-1):
+            nex_val = self._data[i + 1]
+            temp = reduce_func(temp, nex_val)
+        return temp
 
 
 def find_mode(arr: DynamicArray) -> (DynamicArray, int):
