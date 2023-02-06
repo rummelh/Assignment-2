@@ -43,10 +43,7 @@ class Bag:
     # -----------------------------------------------------------------------
 
     def add(self, value: object) -> None:
-        """
-        TODO: Write this implementation
-        """
-        pass
+        self._da.append(value)
 
     def remove(self, value: object) -> bool:
         """

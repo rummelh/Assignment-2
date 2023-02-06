@@ -238,9 +238,6 @@ class DynamicArray:
 
 
 def find_mode(arr: DynamicArray) -> (DynamicArray, int):
-    """
-    TODO: Write this implementation
-    """
     pass
 
 
